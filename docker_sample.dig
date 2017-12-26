@@ -1,0 +1,21 @@
+timezone: UTC
+
+_export:
+  docker:
+    image: python:3.6
+
++setup:
+  echo>: start ${session_time}
+
++disp_current_date:
+  echo>: ${moment(session_time).utc().format('YYYY-MM-DD HH:mm:ss Z')}
+
++pytask:
+  py>: tasks.echo
+
++calltask:
+  call>: 'commons/called.dig'
+
++teardown:
+  echo>: finish ${session_time}
+

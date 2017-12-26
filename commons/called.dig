@@ -1,0 +1,9 @@
+timezone: UTC
+
+_export:
+  docker:
+    image: python:3.6
+
+
++callpytask:
+  py>: tasks.echo
